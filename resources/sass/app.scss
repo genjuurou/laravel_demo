@@ -6,3 +6,21 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+body {
+    background-color: #f0f0f0;
+    margin-top: 5rem;
+}
+  
+.box {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    padding: 10px 20px;
+}
+  
+.user-img {
+    height: 65px;
+    width: 65px;
+}

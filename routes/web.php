@@ -11,10 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/', 'PostsController@index')->name('home');
+Route::post('/posts', 'PostsController@store')->name('posts.store');
+Route::get('/posts/create', 'PostsController@create')->name('posts.create')->middleware('auth');
+Route::get('/posts/{post}', 'PostsController@show')->name('posts.show');
+Route::delete('/posts/{post}/destroy', 'PostsController@destroy')->name('posts.destroy')->middleware('can:delete,post');
+Route::get('/posts/{post}/edit', 'PostsController@edit')->name('posts.edit')->middleware('can:update,post');
+Route::put('/posts/{post}/update', 'PostsController@update')->name('posts.update')->middleware('can:update,post');
+

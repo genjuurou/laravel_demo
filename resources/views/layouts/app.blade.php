@@ -42,7 +42,7 @@
           <div class="list-group">
             @auth
               <a class="list-group-item list-group-item-action" href="{{ route('posts.create') }}">New Post</a>
-              <a class="list-group-item list-group-item-action" href="#">Profile</a>
+              <a class="list-group-item list-group-item-action" href="{{ auth()->user()->profile->path() }}">Profile</a>
               
               <a class="list-group-item list-group-item-action" href="{{ route('logout') }}"
               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>

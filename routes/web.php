@@ -25,3 +25,6 @@ Route::delete('/posts/{post}/destroy', 'PostsController@destroy')->name('posts.d
 Route::get('/posts/{post}/edit', 'PostsController@edit')->name('posts.edit')->middleware('can:update,post');
 Route::put('/posts/{post}/update', 'PostsController@update')->name('posts.update')->middleware('can:update,post');
 
+Route::get('/users/{user}/profile', 'ProfileController@show')->name('profile.show');
+Route::get('/users/{user}/profile/edit', 'ProfileController@edit')->name('profile.edit')->middleware('can:update,profile');
+Route::put('/users/{user}/profile/update', 'ProfileController@update')->name('profile.update')->middleware('can:update,profile');

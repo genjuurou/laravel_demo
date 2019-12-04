@@ -4,10 +4,10 @@
   @if ($posts->isNotEmpty())
     @foreach ($posts as $post)
     <article class="media box pt-3 pb-4 pr-4 pl-2 mb-3">
-        <img class="rounded-circle user-img mr-2" src="#">
+        <img class="rounded-circle user-img mr-2" src="{{ asset('storage/imgs/'.$post->user->profile->image) }}">
         <div class="media-body">
         <div class="border-bottom">
-            <a class="mr-2" href="#">{{ $post->user->name }}</a>
+            <a class="mr-2" href="{{ $post->user->profile->path() }}">{{ $post->user->name }}</a>
             <small class="text-muted">{{ $post->updated_at }}</small>
         </div>
             <h2 class="pt-2"><a href="{{ $post->path() }}">{{ $post->title }}</a></h2>

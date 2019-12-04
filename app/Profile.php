@@ -4,10 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Profile extends Model
 {
-    protected $fillable = ['title', 'content'];
-
     public function user()
     {
         return $this->belongsTo('App\User');
@@ -15,6 +13,6 @@ class Post extends Model
 
     public function path()
     {
-        return route('posts.show', $this);
+        return route('profile.show', $this->user->id);
     }
 }
